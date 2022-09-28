@@ -207,7 +207,7 @@ export function displayResults(candidates) {
               className="container-item"
               style={{ border: "1px solid black" }}
             >
-              <center>That is all.</center>
+              <center>Thank you!</center>
             </div>
           </>
         )}

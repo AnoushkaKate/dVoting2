@@ -11,7 +11,7 @@ a {
 nav {
   display: flex;
   height: 11vh;
-  background: blue;
+  background: rgb(18, 34, 119);
   justify-content: space-around;
   position: sticky;
   top: 0;
@@ -39,7 +39,7 @@ nav .navbar-links a {
 }
 nav .navbar-links a:hover {
   cursor: pointer;
-  color: black;
+  color: #ccab00;
 }
 nav .burger-menu {
   font-size: 24px;
@@ -48,7 +48,7 @@ nav .burger-menu {
   display: none;
 }
 .nav-active {
-  color: black;
+  color: #ccab00;
 }
 
 @media all and (max-width: 777px) {

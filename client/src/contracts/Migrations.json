@@ -59,7 +59,7 @@
   "sourceMap": "66:345:1:-;;;235:56;8:9:-1;5:2;;;30:1;27;20:12;5:2;235:56:1;274:10;266:5;;:18;;;;;;;;;;;;;;;;;;66:345;;;;;;",
   "deployedSourceMap": "66:345:1:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;66:345:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;118:39;;;:::i;:::-;;;;;;;;;;;;;;;;;;;92:20;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;297:112;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;297:112:1;;;;;;;;;;;;;;;;;:::i;:::-;;118:39;;;;:::o;92:20::-;;;;;;;;;;;;;:::o;297:112::-;214:5;;;;;;;;;;;200:19;;:10;:19;;;196:26;;;393:9;366:24;:36;;;;196:26;297:112;:::o",
   "source": "// SPDX-License-Identifier: MIT\npragma solidity >=0.4.21 <0.8.0;\n\ncontract Migrations {\n    address public owner;\n    uint256 public last_completed_migration;\n\n    modifier restricted() {\n        if (msg.sender == owner) _;\n    }\n\n    constructor() public {\n        owner = msg.sender;\n    }\n\n    function setCompleted(uint256 completed) public restricted {\n        last_completed_migration = completed;\n    }\n}\n",
-  "sourcePath": "/home/c309linux/dVoting/contracts/Migrations.sol",
+  "sourcePath": "/home/c309linux/dVoting2/contracts/Migrations.sol",
   "ast": {
     "absolutePath": "project:/contracts/Migrations.sol",
     "exportedSymbols": {
@@ -960,10 +960,28 @@
       "links": {},
       "address": "0xE283C5C8Af7Fb01E1AD0eb4F71C5617E953e95E5",
       "transactionHash": "0xe3774840dec82e1ed73c70f3d81b48aca102d7df86f87336a2d55c0b377edb5e"
+    },
+    "1663277265062": {
+      "events": {},
+      "links": {},
+      "address": "0xC6C16b2eA711dAFebb89eD590B39d9e7f383d5a4",
+      "transactionHash": "0x6965cfcf38405734cbd8bc33aa8e967f449f1fd8568c9e3649003761b291c401"
+    },
+    "1664233416742": {
+      "events": {},
+      "links": {},
+      "address": "0x8Ad08FE98Eb6fbD5d3604146E3F7F164E29c7EEd",
+      "transactionHash": "0xc09134f562177e4c2710712f997c56734973336d48bd4fad0948abfab0df3800"
+    },
+    "1664325227424": {
+      "events": {},
+      "links": {},
+      "address": "0x1c365c177b202e9a4F81Da70D096D77eB65c2791",
+      "transactionHash": "0x08a45b9e14059d67973cfd6885ce19ab059070cbffcc4976fdc9f59724d6950e"
     }
   },
   "schemaVersion": "3.4.9",
-  "updatedAt": "2022-09-08T02:32:02.876Z",
+  "updatedAt": "2022-09-28T00:36:02.924Z",
   "networkType": "ethereum",
   "devdoc": {
     "methods": {}

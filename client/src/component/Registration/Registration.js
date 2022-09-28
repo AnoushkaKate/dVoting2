@@ -25,12 +25,12 @@ export default class Registration extends Component {
       isElEnded: false,
       voterCount: undefined,
       voterName: "",
-      voterPhone: "",
+      voteryearLevel: "",
       voters: [],
       currentVoter: {
         address: undefined,
         name: null,
-        phone: null,
+        yearLevel: null,
         hasVoted: false,
         isVerified: false,
         isRegistered: false,
@@ -96,7 +96,7 @@ export default class Registration extends Component {
         this.state.voters.push({
           address: voter.voterAddress,
           name: voter.name,
-          phone: voter.phone,
+          yearLevel: voter.yearLevel,
           hasVoted: voter.hasVoted,
           isVerified: voter.isVerified,
           isRegistered: voter.isRegistered,
@@ -112,7 +112,7 @@ export default class Registration extends Component {
         currentVoter: {
           address: voter.voterAddress,
           name: voter.name,
-          phone: voter.phone,
+          yearLevel: voter.yearLevel,
           hasVoted: voter.hasVoted,
           isVerified: voter.isVerified,
           isRegistered: voter.isRegistered,
@@ -129,12 +129,12 @@ export default class Registration extends Component {
   updateVoterName = (event) => {
     this.setState({ voterName: event.target.value });
   };
-  updateVoterPhone = (event) => {
-    this.setState({ voterPhone: event.target.value });
+  updateVoteryearLevel = (event) => {
+    this.setState({ voteryearLevel: event.target.value });
   };
   registerAsVoter = async () => {
     await this.state.ElectionInstance.methods
-      .registerAsVoter(this.state.voterName, this.state.voterPhone)
+      .registerAsVoter(this.state.voterName, this.state.voteryearLevel)
       .send({ from: this.state.account, gas: 1000000 });
     window.location.reload();
   };
@@ -187,27 +187,26 @@ export default class Registration extends Component {
                   </div>
                   <div className="div-li">
                     <label className={"label-r"}>
-                      Phone number <span style={{ color: "tomato" }}>*</span>
+                    Year Level number <span style={{ color: "tomato" }}>*</span>
                       <input
                         className={"input-r"}
                         type="number"
-                        placeholder="eg. 9841234567"
-                        value={this.state.voterPhone}
-                        onChange={this.updateVoterPhone}
+                        placeholder="eg. 12"
+                        value={this.state.voteryearLevel}
+                        onChange={this.updateVoteryearLevel}
                       />
                     </label>
                   </div>
                   <p className="note">
                     <span style={{ color: "tomato" }}> Note: </span>
-                    <br /> Make sure your account address and Phone number are
-                    correct. <br /> Admin might not approve your account if the
-                    provided Phone number nub does not matches the account
+                    <br /> Make sure your year level is 2 digits e.g 09<br /> Admin might not approve your account if the
+                    provided Year Level number nub does not matches the account
                     address registered in admins catalogue.
                   </p>
                   <button
                     className="btn-add"
                     disabled={
-                      this.state.voterPhone.length !== 10 ||
+                      this.state.voteryearLevel.length !== 2 ||
                       this.state.currentVoter.isVerified
                     }
                     onClick={this.registerAsVoter}
@@ -268,8 +267,8 @@ export function loadCurrentVoter(voter, isRegistered) {
             <td>{voter.name}</td>
           </tr>
           <tr>
-            <th>Phone</th>
-            <td>{voter.phone}</td>
+            <th>Year Level</th>
+            <td>{voter.yearLevel}</td>
           </tr>
           <tr>
             <th>Voted</th>
@@ -303,8 +302,8 @@ export function loadAllVoters(voters) {
               <td>{voter.name}</td>
             </tr>
             <tr>
-              <th>Phone</th>
-              <td>{voter.phone}</td>
+              <th>Year Level</th>
+              <td>{voter.yearLevel}</td>
             </tr>
             <tr>
               <th>Voted</th>

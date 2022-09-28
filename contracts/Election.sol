@@ -122,7 +122,7 @@ contract Election {
     struct Voter {
         address voterAddress;
         string name;
-        string phone;
+        string yearLevel;
         bool isVerified;
         bool hasVoted;
         bool isRegistered;
@@ -131,12 +131,12 @@ contract Election {
     mapping(address => Voter) public voterDetails;
 
     // Request to be added as voter
-    function registerAsVoter(string memory _name, string memory _phone) public {
+    function registerAsVoter(string memory _name, string memory _yearLevel) public {
         Voter memory newVoter =
             Voter({
                 voterAddress: msg.sender,
                 name: _name,
-                phone: _phone,
+                yearLevel: _yearLevel,
                 hasVoted: false,
                 isVerified: false,
                 isRegistered: true
