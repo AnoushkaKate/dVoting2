@@ -187,7 +187,7 @@ export default class Registration extends Component {
                   </div>
                   <div className="div-li">
                     <label className={"label-r"}>
-                    Year Level number <span style={{ color: "tomato" }}>*</span>
+                    Year Level <span style={{ color: "tomato" }}>*</span>
                       <input
                         className={"input-r"}
                         type="number"

@@ -85,7 +85,7 @@ export default class Voting extends Component {
         this.state.candidates.push({
           id: candidate.candidateId,
           header: candidate.header,
-          slogan: candidate.slogan,
+          description: candidate.description,
         });
       }
       this.setState({ candidates: this.state.candidates });
@@ -140,7 +140,7 @@ export default class Voting extends Component {
           <h2>
             {candidate.header} <small>#{candidate.id}</small>
           </h2>
-          <p className="slogan">{candidate.slogan}</p>
+          <p className="description">{candidate.description}</p>
         </div>
         <div className="vote-btn-container">
           <button

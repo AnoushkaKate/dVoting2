@@ -24,7 +24,7 @@ tr:nth-child(even) {
   margin-bottom: 17px;
   overflow: auto;
 }
-.winner-slogan {
+.winner-description {
   padding: 7px 7px 7px 1px;
   color: #ccab00;
   font-size: 1.5em;

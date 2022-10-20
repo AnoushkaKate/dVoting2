@@ -19,7 +19,7 @@ export default class AddCandidate extends Component {
       accounts: null,
       isAdmin: false,
       header: "",
-      slogan: "",
+      description: "",
       candidates: [],
       candidateCount: undefined,
     };
@@ -73,7 +73,7 @@ export default class AddCandidate extends Component {
         this.state.candidates.push({
           id: candidate.candidateId,
           header: candidate.header,
-          slogan: candidate.slogan,
+          description: candidate.description,
         });
       }
 
@@ -89,13 +89,13 @@ export default class AddCandidate extends Component {
   updateHeader = (event) => {
     this.setState({ header: event.target.value });
   };
-  updateSlogan = (event) => {
-    this.setState({ slogan: event.target.value });
+  updateDescription= (event) => {
+    this.setState({ description: event.target.value });
   };
 
   addCandidate = async () => {
     await this.state.ElectionInstance.methods
-      .addCandidate(this.state.header, this.state.slogan)
+      .addCandidate(this.state.header, this.state.description)
       .send({ from: this.state.account, gas: 1000000 });
     window.location.reload();
   };
@@ -136,13 +136,13 @@ export default class AddCandidate extends Component {
                 />
               </label>
               <label className={"label-ac"}>
-                Slogan
+                Description
                 <input
                   className={"input-ac"}
                   type="text"
                   placeholder="eg. It is what it is"
-                  value={this.state.slogan}
-                  onChange={this.updateSlogan}
+                  value={this.state.description}
+                  onChange={this.updateDescription}
                 />
               </label>
               <button
@@ -174,7 +174,7 @@ export function loadAdded(candidates) {
             }}
           >
             {candidate.id}. <strong>{candidate.header}</strong>:{" "}
-            {candidate.slogan}
+            {candidate.description}
           </div>
         </div>
       </>

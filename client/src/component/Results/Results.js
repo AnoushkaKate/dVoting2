@@ -73,7 +73,7 @@ export default class Result extends Component {
         this.state.candidates.push({
           id: candidate.candidateId,
           header: candidate.header,
-          slogan: candidate.slogan,
+          description: candidate.description,
           voteCount: candidate.voteCount,
         });
       }
@@ -156,7 +156,7 @@ function displayWinner(candidates) {
         <div className="winner-info">
           <p className="winner-tag">Winner!</p>
           <h2> {winner.header}</h2>
-          <p className="winner-slogan">{winner.slogan}</p>
+          <p className="winner-description">{winner.description}</p>
         </div>
         <div className="winner-votes">
           <div className="votes-tag">Total Votes: </div>

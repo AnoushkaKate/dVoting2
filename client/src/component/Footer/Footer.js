@@ -8,28 +8,29 @@ const Footer = () => (
     <div className="footer">
       <div className="footer-container">
         <p>
-          View this project on{" "}
+          Like to have a say? Make a suggestion{" "}
           <a
             className="profile"
-            href="https://github.com/arlbibek/dVoting"
+            href="https://docs.google.com/forms/d/e/1FAIpQLSftRxcR7W-iSxgk5Yrr9vvJ__Na2L-cu6sm4qNk2_vZNO7r7A/viewform"
             target="_blank"
             rel="noopener noreferrer"
           >
-            GitHub
+            here
           </a>
           .
         </p>
         <p>
-          Made with <i className="fas fa-heartbeat" /> by{" "}
+          Check out  {" "}
           <a
             className="profile"
-            href="https://arlbibek.github.io"
+            href="https://poolofyouth.com/"
             target="_blank"
             rel="noopener noreferrer"
           >
-            Bibek Aryal
+            Pool of youth
+            <i className="fas fa-heartbeat" />
           </a>
-          .
+        
         </p>
       </div>
     </div>
